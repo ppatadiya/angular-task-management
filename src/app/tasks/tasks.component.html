@@ -1,0 +1,34 @@
+
+<section id="tasks">
+    <header>
+        <h2>
+            {{name}}'s Tasks.
+
+        </h2>
+        <menu>
+            <button> Add Task </button>
+        </menu>
+    </header>
+
+    <ul>
+        @for (task of selectedUserTasks; track task.id){
+            <li>
+                <app-task [task]="task" (complete)="triggerComplete($event)" />
+            </li>
+        }
+
+        @if (selectedUserTasks.length == 0){
+            <p id="fallback"> There is no user task</p>
+            
+        } @else {
+            
+        }
+
+        
+        
+        
+        
+    </ul>
+
+    
+</section>
