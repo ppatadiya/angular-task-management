@@ -1,4 +1,4 @@
-
+<app-add-task *ngIf="shouldShowAddTask" [id]="id" (clsAddTaskDialogueEvent)="clsAddTaskDialogueEvent()"></app-add-task>
 <section id="tasks">
     <header>
         <h2>
@@ -6,14 +6,14 @@
 
         </h2>
         <menu>
-            <button> Add Task </button>
+            <button (click)="onStartAddTask()"> Add Task </button>
         </menu>
     </header>
 
     <ul>
         @for (task of selectedUserTasks; track task.id){
             <li>
-                <app-task [task]="task" (complete)="triggerComplete($event)" />
+                <app-task [task]="task" />
             </li>
         }
 
@@ -31,4 +31,7 @@
     </ul>
 
     
+
+    
 </section>
+
